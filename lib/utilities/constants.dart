@@ -2,22 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 const kTempTextStyle = TextStyle(
-  fontFamily: 'Spartan MB',
+  fontFamily: 'Spartan-normal',
   fontSize: 100.0,
 );
 
 const kMessageTextStyle = TextStyle(
-  fontFamily: 'Spartan MB',
-  fontSize: 60.0,
+  fontFamily: 'Spartan-normal',
+  fontSize: 40.0,
+);
+
+const cityTextStyle = TextStyle(
+  fontFamily: 'Spartan-bold',
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
 );
 
 const kButtonTextStyle = TextStyle(
   fontSize: 30.0,
-  fontFamily: 'Spartan MB',
+  fontFamily: 'Segoe-bold',
 );
 
 const kConditionTextStyle = TextStyle(
-  fontSize: 100.0,
+  fontFamily: 'Segoe-normal',
+  fontSize: 50.0,
 );
 
 const textFieldInputStyle = InputDecoration(
@@ -35,3 +42,9 @@ const textFieldInputStyle = InputDecoration(
       ),
       borderSide: BorderSide.none),
 );
+
+final backgroundGradient = LinearGradient(
+    tileMode: TileMode.repeated,
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Colors.blueGrey[900], Color(0xFF012431)]);

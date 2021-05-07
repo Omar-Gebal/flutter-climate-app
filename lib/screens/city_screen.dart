@@ -13,10 +13,7 @@ class _CityScreenState extends State<CityScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/city_background.jpg'),
-            fit: BoxFit.cover,
-          ),
+          gradient: backgroundGradient,
         ),
         constraints: BoxConstraints.expand(),
         child: SafeArea(

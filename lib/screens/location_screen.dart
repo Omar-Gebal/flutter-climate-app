@@ -1,4 +1,5 @@
 import 'package:clima/screens/city_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 import 'package:clima/services/weather.dart';
@@ -39,23 +40,16 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8), BlendMode.dstATop),
-          ),
-        ),
+        decoration: BoxDecoration(gradient: backgroundGradient),
         constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
+            children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
+                children: [
                   FlatButton(
                     onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
@@ -86,11 +80,11 @@ class _LocationScreenState extends State<LocationScreen> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
-                child: Row(
+                padding: EdgeInsets.only(left: 0.0),
+                child: Column(
                   children: <Widget>[
                     Text(
-                      '$temperature°',
+                      '$temperature°\u1d9c',
                       style: kTempTextStyle,
                     ),
                     Text(
@@ -101,10 +95,18 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 15.0),
+                padding: EdgeInsets.all(20),
                 child: Text(
-                  '$message in $cityName',
-                  textAlign: TextAlign.right,
+                  '$cityName',
+                  textAlign: TextAlign.center,
+                  style: cityTextStyle,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  '$message ',
+                  textAlign: TextAlign.center,
                   style: kMessageTextStyle,
                 ),
               ),

@@ -30,3 +30,9 @@ flutter:
     fonts:
     - asset: fonts/SpartanMB-Black.otf
       weight: 900
+  - family: Segoe-normal
+    fonts:
+    - asset: fonts/Segoe UI.ttf
+  - family: Segoe-bold
+    fonts:
+    - asset: fonts/Segoe UI Bold.ttf

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:clima/services/weather.dart';
+import 'package:clima/utilities/constants.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -27,11 +28,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SpinKitWave(
-          color: Colors.white,
-          size: 70,
+    return Container(
+      decoration: BoxDecoration(gradient: backgroundGradient),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: SpinKitWave(
+            color: Colors.white,
+            size: 70,
+          ),
         ),
       ),
     );
